@@ -56,8 +56,6 @@ RUN yum install -y \
     perl-version \
     perl-IO-Compress-Zlib \
     perl-Date-Manip \
-    perl-Gtk2-Ex-Simple-OptionMenu \
-    perl-Gtk2-Ex-Simple-CascadeList \
     perl-ExtUtils-Embed \
     perl-devel \
     perl-Glib \
@@ -67,6 +65,9 @@ RUN yum install -y \
     perl-Cairo \
     perl-DBI \
   && yum clean all
+
+#    perl-Gtk2-Ex-Simple-OptionMenu \
+#    perl-Gtk2-Ex-Simple-CascadeList \
 
 RUN yum install -y \
     gtk-doc \
