@@ -118,30 +118,7 @@ RUN yum install -y \
      rapidjson{,-devel} \
   && yum clean all
 
-ENV CODE=/code
-#ENV USER=builder
-#ENV USERDIR=/home/${USER}
-ENV USER=root
-ENV USERDIR=/${USER}
-ENV RPMBUILD=${USERDIR}/rpmbuild
-
-#RUN groupadd -g 1001 ${USER}
-#RUN adduser --system --uid=1001 --gid=1001 -G wheel \
-#        --home ${USERDIR} --shell /bin/bash ${USER}
-
-RUN mkdir -p \
-    ${CODE} \
-    ${RPMBUILD} \
-  && chmod a+x \
-    ${CODE} \
-    ${RPMBUILD} \
-  && chown ${USER}:${USER} \
-    ${CODE} \
-    ${RPMBUILD} 
-
 RUN cat /usr/lib64/pkgconfig/libcurl.pc | grep -v \# > /tmp/libcurl.pc && mv -f /tmp/libcurl.pc /usr/lib64/pkgconfig
-WORKDIR /code
-VOLUME [ "/code", "/home/builder/rpmbuild" ]
+WORKDIR /github/workspace
 ENTRYPOINT [ "./bootstrap" ]
-CMD [ "--env", "rpm" ]
-#USER ${USER}
+CMD [ "make" ]

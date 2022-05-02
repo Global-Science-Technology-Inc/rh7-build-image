@@ -1,27 +1,9 @@
 name: 'Metlab RPM Build on RH7'
-description: 'Build Metlab RPMs from spec file and upload it as Artifact or Release Asset'
-
-inputs:
-  spec_file:
-    description: 'path to the spec file'
-    required: true
-    default: '*.spec'                     #Any spec file in top
-
-outputs:
-  source_rpm_path:
-    description: 'path to Source RPM file'
-  source_rpm_dir_path:
-    description: 'path to  SRPMS directory'
-  source_rpm_name:
-    description: 'name of Source RPM file'
-  rpm_dir_path:
-    description: 'path to RPMS directory'
-  rpm_content_type:
-    description: 'Content-type for Upload'
+description: 'Build Metlab Application'
 
 runs:
   using: 'docker'
-  image: 'ghcr.io/global-science-technology-inc/rh7-build-image:main'
+  image: 'docker://ghcr.io/global-science-technology-inc/rh7-build-image:main'
 
 branding:
   icon: 'package'
