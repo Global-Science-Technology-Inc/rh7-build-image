@@ -94,7 +94,7 @@ RUN yum install -y \
     gts{,-devel} \
     proj{,-devel} \
     shapelib{,-devel} \
-    openmotif{,-devel} \
+    motif{,-devel} \
     libjpeg-turbo \
     freetype-devel \
     grib2 \
