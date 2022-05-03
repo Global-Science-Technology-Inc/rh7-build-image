@@ -119,6 +119,10 @@ RUN yum install -y \
      rapidjson{,-devel} \
   && yum clean all
 
+RUN yum install -y \
+    openmotif{,-devel} \
+  && yum clean all
+
 RUN rpm -q --list openmotif-devel
 RUN rpm -q --list openmotif
 
