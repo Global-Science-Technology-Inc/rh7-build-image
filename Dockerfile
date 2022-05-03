@@ -126,6 +126,9 @@ RUN yum install -y \
 RUN rpm -q --list openmotif-devel
 RUN rpm -q --list openmotif
 
+RUN rpm -q --list motif-devel
+RUN rpm -q --list motif
+
 RUN cat /usr/lib64/pkgconfig/libcurl.pc | grep -v \# > /tmp/libcurl.pc && mv -f /tmp/libcurl.pc /usr/lib64/pkgconfig
 WORKDIR /github/workspace
 ENTRYPOINT [ "./bootstrap" ]
