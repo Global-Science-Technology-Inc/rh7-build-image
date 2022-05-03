@@ -94,7 +94,7 @@ RUN yum install -y \
     gts{,-devel} \
     proj{,-devel} \
     shapelib{,-devel} \
-    motif{,-devel} \
+    openmotif{,-devel} \
     libjpeg-turbo \
     freetype-devel \
     grib2 \
@@ -118,6 +118,8 @@ RUN yum install -y \
 RUN yum install -y \
      rapidjson{,-devel} \
   && yum clean all
+
+RUN ls -al /usr/include/openmotif/Xm
 
 RUN cat /usr/lib64/pkgconfig/libcurl.pc | grep -v \# > /tmp/libcurl.pc && mv -f /tmp/libcurl.pc /usr/lib64/pkgconfig
 WORKDIR /github/workspace
