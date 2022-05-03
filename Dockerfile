@@ -123,9 +123,6 @@ RUN yum install -y \
     openmotif{,-devel} \
   && yum clean all
 
-RUN rpm -q --list openmotif-devel
-RUN rpm -q --list openmotif
-
 RUN rpm -q --list motif-devel
 RUN rpm -q --list motif
 
