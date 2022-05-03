@@ -119,7 +119,8 @@ RUN yum install -y \
      rapidjson{,-devel} \
   && yum clean all
 
-RUN ls -al /usr/include/openmotif/Xm
+RUN rpm -q --list openmotif-devel
+RUN rpm -q --list openmotif
 
 RUN cat /usr/lib64/pkgconfig/libcurl.pc | grep -v \# > /tmp/libcurl.pc && mv -f /tmp/libcurl.pc /usr/lib64/pkgconfig
 WORKDIR /github/workspace
