@@ -119,13 +119,6 @@ RUN yum install -y \
      rapidjson{,-devel} \
   && yum clean all
 
-RUN yum install -y \
-    openmotif{,-devel} \
-  && yum clean all
-
-RUN rpm -q --list motif-devel
-RUN rpm -q --list motif
-
 RUN cat /usr/lib64/pkgconfig/libcurl.pc | grep -v \# > /tmp/libcurl.pc && mv -f /tmp/libcurl.pc /usr/lib64/pkgconfig
 WORKDIR /github/workspace
 ENTRYPOINT [ "./bootstrap" ]
