@@ -3,7 +3,8 @@ description: 'Build Metlab Application'
 
 runs:
   using: 'docker'
-  image: 'docker://ghcr.io/global-science-technology-inc/rh7-build-image:main'
+  image: Dockerfile
+#  image: 'docker://ghcr.io/global-science-technology-inc/rh7-build-image:main'
 
 branding:
   icon: 'package'
